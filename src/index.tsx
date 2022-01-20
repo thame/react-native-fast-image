@@ -25,6 +25,11 @@ const resizeMode = {
     center: 'center',
 } as const
 
+export type ResizeImageAndroid = {
+    width: number
+    height: number
+}
+
 export type Priority = 'low' | 'normal' | 'high'
 
 const priority = {
@@ -83,6 +88,7 @@ export interface ImageStyle extends FlexStyle, TransformsStyle, ShadowStyleIOS {
 export interface FastImageProps extends AccessibilityProps, ViewProps {
     source: Source | number
     resizeMode?: ResizeMode
+    resizeImageAndroid?: ResizeImageAndroid
     fallback?: boolean
 
     onLoadStart?(): void
